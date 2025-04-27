@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import AnimatedSection from '../../components/AnimatedSection';
 import { useState } from 'react';
-import dynamic from 'next/dynamic';
+// Remove mapbox imports
+// import dynamic from 'next/dynamic';
 
-// Dynamically import Map component with no SSR
-const Map = dynamic(() => import('react-map-gl'), { ssr: false });
+// Comment out Map component
+// const Map = dynamic(() => import('react-map-gl'), { ssr: false });
 
 export default function About() {
   const [viewState, setViewState] = useState({
@@ -141,19 +142,6 @@ export default function About() {
             <div className="bg-gray-200 w-full h-full flex items-center justify-center">
               <p className="text-lg">Interactive Map Will Be Loaded Here</p>
             </div>
-            {/* Uncomment when ready to implement actual map
-            <Map
-              {...viewState}
-              onMove={evt => setViewState(evt.viewState)}
-              mapStyle="mapbox://styles/mapbox/dark-v10"
-              mapboxAccessToken="YOUR_MAPBOX_TOKEN"
-              style={{ width: '100%', height: '100%' }}
-            >
-              <Marker longitude={50.58} latitude={26.22}>
-                <div className="text-red-500">📍</div>
-              </Marker>
-            </Map>
-            */}
           </div>
         </div>
       </section>
