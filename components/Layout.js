@@ -28,7 +28,7 @@ export default function Layout({ children, title = 'Bahrain Nights Podcast Studi
             backgroundColor: '#000000',
           }}
         >
-          <source src="/videos/Podcast header resized .mp4" type="video/mp4" />
+          <source src="/videos/Podcast updated 1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="video-overlay">
@@ -49,10 +49,10 @@ export default function Layout({ children, title = 'Bahrain Nights Podcast Studi
     <div className="min-h-screen flex flex-col bg-black text-white">
       <Head>
         <title>{title}</title>
-        <meta name="description" content="Professional Podcast Studio in Bahrain - Mobile podcast recording services with top-tier equipment and expert support anywhere in Bahrain." />
+        <meta name="description" content="Professional Podcast filming in Bahrain! Expert filmmaker creates high-quality video podcasts for Creators & Businesses. Book now for studio or on-location shoots!" />
         <meta name="keywords" content="podcast bahrain, podcast recording bahrain, filming podcast bahrain, professional podcast bahrain, mobile podcast studio, bahrain podcast services" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="preload" href="/videos/Podcast header resized .mp4" as="video" type="video/mp4" />
+        <link rel="preload" href="/videos/Podcast updated 1.mp4" as="video" type="video/mp4" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </Head>

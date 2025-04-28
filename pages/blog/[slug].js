@@ -208,7 +208,7 @@ export default function BlogPost() {
     <>
       <Head>
         <title>{post.title} - Bahrain Nights Podcast Studio</title>
-        <meta name="description" content={post.excerpt} />
+        <meta name="description" content="Professional Podcast filming in Bahrain! Expert filmmaker creates high-quality video podcasts for Creators & Businesses. Book now for studio or on-location shoots!" />
       </Head>
 
       {/* Header Banner with Featured Image */}

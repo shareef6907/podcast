@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <link rel="dns-prefetch" href="/videos" />
         <link rel="preconnect" href="/videos" />
-        <link rel="preload" href="/videos/Podcast header resized .mp4" as="video" type="video/mp4" fetchpriority="high" />
+        <link rel="preload" href="/videos/Podcast updated 1.mp4" as="video" type="video/mp4" fetchpriority="high" />
       </Head>
       <Layout>
         <Component {...pageProps} />

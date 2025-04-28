@@ -18,7 +18,7 @@ export default function About() {
     <>
       <Head>
         <title>About Us - Bahrain Nights Podcast Studio</title>
-        <meta name="description" content="Learn about Bahrain Nights Podcast Studio, our mission, history, and our commitment to delivering unparalleled podcasting experiences." />
+        <meta name="description" content="Professional Podcast filming in Bahrain! Expert filmmaker creates high-quality video podcasts for Creators & Businesses. Book now for studio or on-location shoots!" />
       </Head>
 
       {/* Header Banner */}

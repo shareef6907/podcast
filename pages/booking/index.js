@@ -143,7 +143,7 @@ export default function Booking() {
     <>
       <Head>
         <title>Book Your Podcast Session - Bahrain Nights</title>
-        <meta name="description" content="Schedule your mobile podcast recording session with our professional team in Bahrain. 12 hours delivery time guaranteed." />
+        <meta name="description" content="Professional Podcast filming in Bahrain! Expert filmmaker creates high-quality video podcasts for Creators & Businesses. Book now for studio or on-location shoots!" />
         <meta name="keywords" content="podcast booking bahrain, podcast studio booking, professional podcast recording, mobile podcast recording, podcast session bahrain" />
       </Head>
 

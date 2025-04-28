@@ -45,7 +45,7 @@ export default function Home() {
     <>
       <Head>
         <title>Bahrain Nights Podcast Studio - Professional Podcasting Anywhere in Bahrain</title>
-        <meta name="description" content="Experience world-class podcasting with our mobile studio setup, featuring top-tier equipment and expert support anywhere in Bahrain." />
+        <meta name="description" content="Professional Podcast filming in Bahrain! Expert filmmaker creates high-quality video podcasts for Creators & Businesses. Book now for studio or on-location shoots!" />
         <meta name="keywords" content="podcast bahrain, podcast recording bahrain, filming podcast bahrain, professional podcast bahrain, mobile podcast studio, bahrain podcast services" />
       </Head>
 
@@ -65,7 +65,7 @@ export default function Home() {
             backgroundColor: '#000000',
           }}
         >
-          <source src="/videos/Podcast header resized .mp4" type="video/mp4" />
+          <source src="/videos/Podcast updated 1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="video-overlay">
