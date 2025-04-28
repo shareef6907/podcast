@@ -6,9 +6,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link rel="dns-prefetch" href="/videos" />
-        <link rel="preconnect" href="/videos" />
-        <link rel="preload" href="/videos/Podcast updated 1.mp4" as="video" type="video/mp4" fetchpriority="high" />
+        <link rel="dns-prefetch" href="https://storage.googleapis.com" />
+        <link rel="preconnect" href="https://storage.googleapis.com" />
+        <link rel="preload" href="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" as="video" type="video/mp4" fetchpriority="high" />
       </Head>
       <Layout>
         <Component {...pageProps} />
