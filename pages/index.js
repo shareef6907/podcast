@@ -1,14 +1,52 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useState } from 'react';
 import AnimatedSection from '../components/AnimatedSection';
 import { motion } from 'framer-motion';
 
 export default function Home() {
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+    cameraPackage: 'standard'
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormState(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      console.log('Form submitted:', formState);
+      setIsSubmitting(false);
+      setSubmitSuccess(true);
+      // Reset form after successful submission
+      setFormState({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        cameraPackage: 'standard'
+      });
+    }, 1500);
+  };
+
   return (
     <>
       <Head>
         <title>Bahrain Nights Podcast Studio - Professional Podcasting Anywhere in Bahrain</title>
         <meta name="description" content="Experience world-class podcasting with our mobile studio setup, featuring top-tier equipment and expert support anywhere in Bahrain." />
+        <meta name="keywords" content="podcast bahrain, podcast recording bahrain, filming podcast bahrain, professional podcast bahrain, mobile podcast studio, bahrain podcast services" />
       </Head>
 
       {/* Hero Section with Background Video */}
@@ -33,7 +71,7 @@ export default function Home() {
         <div className="video-overlay">
           <div className="max-w-4xl mx-auto text-center text-white">
             <motion.h1 
-              className="text-4xl md:text-6xl font-bold mb-4 text-shadow"
+              className="text-4xl md:text-6xl font-bold mb-4 text-shadow text-gold"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -78,59 +116,178 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Key Features Section */}
-      <section className="py-16 bg-gray-50">
+      {/* Quick Booking Section */}
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our World-Class Podcast Solutions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gold">Book Your Podcast Session</h2>
+            <p className="text-xl text-center text-white mb-12 max-w-3xl mx-auto">
+              Reserve your professional podcast recording session with our cutting-edge equipment and expert team
+            </p>
+          </AnimatedSection>
+          
+          <div className="max-w-5xl mx-auto">
+            {!submitSuccess ? (
+              <form onSubmit={handleSubmit} className="bg-gray-900 p-8 rounded-lg shadow-xl">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="mb-4">
+                    <label htmlFor="name" className="block text-gold font-bold mb-2">Your Name *</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formState.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-white"
+                      placeholder="Your Full Name"
+                    />
+                  </div>
+                  
+                  <div className="mb-4">
+                    <label htmlFor="email" className="block text-gold font-bold mb-2">Email Address *</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formState.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-white"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+                  
+                  <div className="mb-4">
+                    <label htmlFor="phone" className="block text-gold font-bold mb-2">Phone Number *</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formState.phone}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-white"
+                      placeholder="+973 XXXX XXXX"
+                    />
+                  </div>
+                  
+                  <div className="mb-4">
+                    <label htmlFor="cameraPackage" className="block text-gold font-bold mb-2">Camera Package *</label>
+                    <select
+                      id="cameraPackage"
+                      name="cameraPackage"
+                      value={formState.cameraPackage}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-white"
+                    >
+                      <option value="standard">Standard (2 Cameras: Sony A7s3)</option>
+                      <option value="premium">Premium (4+ Cameras: Sony Fx3, Sony Fx6)</option>
+                      <option value="premium-plus">Premium Plus (ARRI Alexa + Full Suite)</option>
+                    </select>
+                  </div>
+                  
+                  <div className="mb-4 md:col-span-2">
+                    <label htmlFor="message" className="block text-gold font-bold mb-2">Additional Details</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formState.message}
+                      onChange={handleChange}
+                      rows="4"
+                      className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-white"
+                      placeholder="Tell us about your podcast, location preferences, and any other requirements."
+                    ></textarea>
+                  </div>
+                </div>
+                
+                <div className="text-center mt-6">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className={`py-3 px-8 rounded-full font-bold ${isSubmitting ? 'bg-gray-500' : 'bg-gold hover:bg-darkgold text-black'} transition duration-300`}
+                  >
+                    {isSubmitting ? 'Submitting...' : 'Book Your Session'}
+                  </button>
+                </div>
+              </form>
+            ) : (
+              <div className="bg-gray-900 p-8 rounded-lg shadow-xl text-center">
+                <div className="text-gold mb-4">
+                  <svg className="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                  </svg>
+                </div>
+                <h2 className="text-2xl font-bold mb-4 text-white">Booking Request Received!</h2>
+                <p className="text-lg mb-6 text-gray-300">
+                  Thank you for your booking request. Our team will contact you shortly to confirm your session and discuss the details.
+                </p>
+                <button
+                  onClick={() => setSubmitSuccess(false)}
+                  className="py-2 px-6 bg-gold text-black font-bold rounded-full hover:bg-darkgold transition duration-300"
+                >
+                  Book Another Session
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features Section */}
+      <section className="py-16 bg-gray-900">
+        <div className="container mx-auto px-4">
+          <AnimatedSection>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gold">Our World-Class Podcast Solutions</h2>
           </AnimatedSection>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <AnimatedSection delay={0.1} className="feature-card">
+            <AnimatedSection delay={0.1} className="bg-black p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 border border-gray-800">
               <div className="text-center">
-                <div className="bg-gold text-white p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <div className="bg-gold text-black p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd"></path>
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Cutting-Edge Equipment</h3>
-                <p className="text-gray-600">Record with Sony cinema cameras, Blackmagic ATEM Mini ISO Extreme, and professional mics for stunning audio and video quality.</p>
+                <h3 className="text-xl font-bold mb-2 text-gold">Cutting-Edge Equipment</h3>
+                <p className="text-gray-300">Record with Sony cinema cameras, Blackmagic ATEM Mini ISO Extreme, and professional mics for stunning audio and video quality.</p>
               </div>
             </AnimatedSection>
             
-            <AnimatedSection delay={0.2} className="feature-card">
+            <AnimatedSection delay={0.2} className="bg-black p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 border border-gray-800">
               <div className="text-center">
-                <div className="bg-gold text-white p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <div className="bg-gold text-black p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path>
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Location Flexibility</h3>
-                <p className="text-gray-600">We bring the studio to you—set up in hotels, offices, or outdoor locations across Bahrain.</p>
+                <h3 className="text-xl font-bold mb-2 text-gold">Location Flexibility</h3>
+                <p className="text-gray-300">We bring the studio to you—set up in hotels, offices, or outdoor locations across Bahrain.</p>
               </div>
             </AnimatedSection>
             
-            <AnimatedSection delay={0.3} className="feature-card">
+            <AnimatedSection delay={0.3} className="bg-black p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 border border-gray-800">
               <div className="text-center">
-                <div className="bg-gold text-white p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <div className="bg-gold text-black p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Expert Technicians</h3>
-                <p className="text-gray-600">Our skilled team handles all technical details, ensuring a seamless recording experience.</p>
+                <h3 className="text-xl font-bold mb-2 text-gold">Expert Technicians</h3>
+                <p className="text-gray-300">Our skilled team handles all technical details, ensuring a seamless recording experience.</p>
               </div>
             </AnimatedSection>
             
-            <AnimatedSection delay={0.4} className="feature-card">
+            <AnimatedSection delay={0.4} className="bg-black p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 border border-gray-800">
               <div className="text-center">
-                <div className="bg-gold text-white p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <div className="bg-gold text-black p-3 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-2">Customizable Packages</h3>
-                <p className="text-gray-600">Tailor your setup with additional cameras, lighting, or post-production services.</p>
+                <h3 className="text-xl font-bold mb-2 text-gold">Customizable Packages</h3>
+                <p className="text-gray-300">Tailor your setup with additional cameras, lighting, or post-production services.</p>
               </div>
             </AnimatedSection>
           </div>
@@ -141,12 +298,12 @@ export default function Home() {
       <section className="py-16 bg-black text-white">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What Our Clients Say</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gold">What Our Clients Say</h2>
           </AnimatedSection>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <AnimatedSection delay={0.1}>
-              <div className="bg-gray-900 p-6 rounded-lg">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800">
                 <div className="text-gold flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -155,12 +312,12 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="mb-4 italic">"The quality of the recording was exceptional, and the team made everything so easy!"</p>
-                <p className="font-bold">– International Podcaster</p>
+                <p className="font-bold text-gold">– International Podcaster</p>
               </div>
             </AnimatedSection>
             
             <AnimatedSection delay={0.2}>
-              <div className="bg-gray-900 p-6 rounded-lg">
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800">
                 <div className="text-gold flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -169,7 +326,63 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="mb-4 italic">"Recording in my hotel room with such professional gear was a game-changer."</p>
-                <p className="font-bold">– Travel Blogger</p>
+                <p className="font-bold text-gold">– Travel Blogger</p>
+              </div>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.3}>
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                <div className="text-gold flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                  ))}
+                </div>
+                <p className="mb-4 italic">"The professionalism and equipment quality was beyond my expectations. Our corporate podcast truly stands out now."</p>
+                <p className="font-bold text-gold">– Business Executive</p>
+              </div>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.4}>
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                <div className="text-gold flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                  ))}
+                </div>
+                <p className="mb-4 italic">"Their ability to transform our beach location into a professional recording space was amazing! The audio quality despite the outdoor setting was perfect."</p>
+                <p className="font-bold text-gold">– Event Organizer</p>
+              </div>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.5}>
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                <div className="text-gold flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                  ))}
+                </div>
+                <p className="mb-4 italic">"From setup to final delivery, the team was incredible. The Sony cinema cameras made our interview series look like a Hollywood production."</p>
+                <p className="font-bold text-gold">– Media Director</p>
+              </div>
+            </AnimatedSection>
+            
+            <AnimatedSection delay={0.6}>
+              <div className="bg-gray-900 p-6 rounded-lg border border-gray-800">
+                <div className="text-gold flex mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                  ))}
+                </div>
+                <p className="mb-4 italic">"Being able to record our Arabic language podcast with technical support that understands our needs was invaluable. Highly recommended for local content creators."</p>
+                <p className="font-bold text-gold">– Bahraini Content Creator</p>
               </div>
             </AnimatedSection>
           </div>
@@ -183,7 +396,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to boost your podcast?</h2>
             <p className="text-xl mb-8">Contact us today to schedule your session.</p>
             <Link href="/booking">
-              <span className="bg-black text-white font-bold py-3 px-8 rounded-full inline-block hover:bg-gray-800 transition duration-300">Book Now</span>
+              <span className="bg-black text-gold font-bold py-3 px-8 rounded-full inline-block hover:bg-gray-800 transition duration-300">Book Now</span>
             </Link>
           </AnimatedSection>
         </div>

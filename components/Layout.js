@@ -6,14 +6,18 @@ export default function Layout({ children, title = 'Bahrain Nights Podcast Studi
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-black text-white">
       <Head>
         <title>{title}</title>
-        <meta name="description" content="Professional Podcast Studio in Bahrain" />
+        <meta name="description" content="Professional Podcast Studio in Bahrain - Mobile podcast recording services with top-tier equipment and expert support anywhere in Bahrain." />
+        <meta name="keywords" content="podcast bahrain, podcast recording bahrain, filming podcast bahrain, professional podcast bahrain, mobile podcast studio, bahrain podcast services" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preload" href="/videos/Podcast header resized .mp4" as="video" type="video/mp4" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </Head>
 
-      <header className="bg-black text-white shadow-md">
+      <header className="bg-black text-white shadow-md sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href="/">
             <span className="text-2xl font-bold text-gold">Bahrain Nights</span>
@@ -41,9 +45,6 @@ export default function Layout({ children, title = 'Bahrain Nights Podcast Studi
             <Link href="/services">
               <span className="hover:text-gold transition">Services</span>
             </Link>
-            <Link href="/portfolio">
-              <span className="hover:text-gold transition">Portfolio</span>
-            </Link>
             <Link href="/about">
               <span className="hover:text-gold transition">About</span>
             </Link>
@@ -54,7 +55,7 @@ export default function Layout({ children, title = 'Bahrain Nights Podcast Studi
               <span className="hover:text-gold transition">FAQ</span>
             </Link>
             <Link href="/booking">
-              <span className="hover:text-gold transition">Book Now</span>
+              <span className="hover:text-gold transition font-bold">Book Now</span>
             </Link>
           </nav>
         </div>
@@ -63,25 +64,22 @@ export default function Layout({ children, title = 'Bahrain Nights Podcast Studi
         <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link href="/">
-              <span className="block px-3 py-2 hover:bg-gray-900">Home</span>
+              <span className="block px-3 py-2 hover:bg-gray-900 hover:text-gold">Home</span>
             </Link>
             <Link href="/services">
-              <span className="block px-3 py-2 hover:bg-gray-900">Services</span>
-            </Link>
-            <Link href="/portfolio">
-              <span className="block px-3 py-2 hover:bg-gray-900">Portfolio</span>
+              <span className="block px-3 py-2 hover:bg-gray-900 hover:text-gold">Services</span>
             </Link>
             <Link href="/about">
-              <span className="block px-3 py-2 hover:bg-gray-900">About</span>
+              <span className="block px-3 py-2 hover:bg-gray-900 hover:text-gold">About</span>
             </Link>
             <Link href="/blog">
-              <span className="block px-3 py-2 hover:bg-gray-900">Blog</span>
+              <span className="block px-3 py-2 hover:bg-gray-900 hover:text-gold">Blog</span>
             </Link>
             <Link href="/faq">
-              <span className="block px-3 py-2 hover:bg-gray-900">FAQ</span>
+              <span className="block px-3 py-2 hover:bg-gray-900 hover:text-gold">FAQ</span>
             </Link>
             <Link href="/booking">
-              <span className="block px-3 py-2 hover:bg-gray-900">Book Now</span>
+              <span className="block px-3 py-2 bg-gold text-black font-bold">Book Now</span>
             </Link>
           </div>
         </div>
@@ -91,7 +89,7 @@ export default function Layout({ children, title = 'Bahrain Nights Podcast Studi
         {children}
       </main>
 
-      <footer className="bg-black text-white py-8">
+      <footer className="bg-black text-white py-8 border-t border-gray-800">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
@@ -107,7 +105,7 @@ export default function Layout({ children, title = 'Bahrain Nights Podcast Studi
             <div>
               <h3 className="text-xl font-bold text-gold mb-4">Follow Us</h3>
               <div className="flex space-x-4">
-                <a href="#" className="hover:text-gold">
+                <a href="https://www.instagram.com/podcastbahrain/" target="_blank" rel="noopener noreferrer" className="hover:text-gold">
                   <span className="sr-only">Instagram</span>
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />

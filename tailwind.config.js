@@ -7,8 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gold: '#D4AF37',
-        darkgold: '#B8860B',
+        gold: '#FFD700',
+        darkgold: '#CCAC00',
+        primary: '#000000',
+        secondary: '#FFDD33',
       },
       animation: {
         'fade-in': 'fadeIn 1s ease-in-out',
