@@ -52,7 +52,7 @@ export default function Layout({ children, title = 'Bahrain Nights Podcast Studi
         <meta name="description" content="Professional Podcast filming in Bahrain! Expert filmmaker creates high-quality video podcasts for Creators & Businesses. Book now for studio or on-location shoots!" />
         <meta name="keywords" content="podcast bahrain, podcast recording bahrain, filming podcast bahrain, professional podcast bahrain, mobile podcast studio, bahrain podcast services" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="preload" href="/videos/Podcast updated 1.mp4" as="video" type="video/mp4" />
+        <link rel="preload" href="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" as="video" type="video/mp4" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </Head>
