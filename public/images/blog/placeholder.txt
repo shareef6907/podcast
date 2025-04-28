@@ -1,0 +1,8 @@
+This folder contains blog post images. Sample images should be named:
+
+1. bahrain-podcasting.jpg - Why Bahrain is Perfect for Podcasting
+2. hotel-recording.jpg - Tips for Hotel Room Recordings
+3. microphone-selection.jpg - Choosing the Right Microphone
+4. multi-camera.jpg - Multi-Camera Setups
+5. podcast-marketing.jpg - Podcast Marketing Strategies
+6. business-podcasts.jpg - Business Podcasts in Middle East 

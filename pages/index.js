@@ -129,7 +129,7 @@ export default function Home() {
           <div className="max-w-5xl mx-auto text-center">
             <Link href="/booking">
               <span className="inline-block bg-gold hover:bg-darkgold text-black font-bold py-4 px-10 rounded-full transition duration-300 text-xl">
-                Complete Booking
+                Easily Book Now
               </span>
             </Link>
             <p className="mt-4 text-gray-400">For full options including camera selection, visit our booking page</p>
