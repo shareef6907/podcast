@@ -18,7 +18,14 @@ export default function Home() {
           muted
           loop
           playsInline
+          preload="auto"
+          fetchpriority="high"
+          poster="/images/video-poster.jpg"
           className="w-full h-full object-cover"
+          style={{
+            willChange: 'transform',
+            backgroundColor: '#000000',
+          }}
         >
           <source src="/videos/Podcast header resized .mp4" type="video/mp4" />
           Your browser does not support the video tag.
