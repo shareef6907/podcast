@@ -28,12 +28,12 @@ export default function Services() {
               Premium equipment and expert technical support for your podcasting needs
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/booking">
+              <Link href="/booking" legacyBehavior>
                 <a className="px-8 py-3 bg-gold text-black font-semibold rounded-md hover:bg-opacity-90 transition duration-300 shadow-gold">
                   Book Now
                 </a>
               </Link>
-              <Link href="/portfolio">
+              <Link href="/portfolio" legacyBehavior>
                 <a className="px-8 py-3 border border-gold text-gold font-semibold rounded-md hover:bg-gold hover:bg-opacity-10 transition duration-300">
                   View Our Work
                 </a>
@@ -226,7 +226,7 @@ export default function Services() {
                   </li>
                 </ul>
                 <div className="text-center">
-                  <Link href="/booking">
+                  <Link href="/booking" legacyBehavior>
                     <a className="inline-block px-6 py-2 bg-gold text-black font-semibold rounded-md hover:bg-opacity-90 transition duration-300 shadow-gold">
                       Book Now
                     </a>
@@ -264,7 +264,7 @@ export default function Services() {
                   </li>
                 </ul>
                 <div className="text-center">
-                  <Link href="/booking">
+                  <Link href="/booking" legacyBehavior>
                     <a className="inline-block px-6 py-2 bg-gold text-black font-semibold rounded-md hover:bg-opacity-90 transition duration-300 shadow-gold">
                       Book Now
                     </a>
@@ -303,7 +303,7 @@ export default function Services() {
                   </li>
                 </ul>
                 <div className="text-center">
-                  <Link href="/booking">
+                  <Link href="/booking" legacyBehavior>
                     <a className="inline-block px-6 py-2 bg-gold text-black font-semibold rounded-md hover:bg-opacity-90 transition duration-300 shadow-gold">
                       Book Now
                     </a>
@@ -313,7 +313,7 @@ export default function Services() {
             </div>
             <div className="text-center mt-12">
               <p className="text-gray-300 mb-6">Need a custom solution for your specific requirements?</p>
-              <Link href="/contact">
+              <Link href="/contact" legacyBehavior>
                 <a className="px-8 py-3 border border-gold text-gold font-semibold rounded-md hover:bg-gold hover:bg-opacity-10 transition duration-300">
                   Contact Us for Custom Packages
                 </a>
@@ -331,7 +331,7 @@ export default function Services() {
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               Book your session today and experience the difference that professional equipment and expert support can make for your podcast.
             </p>
-            <Link href="/booking">
+            <Link href="/booking" legacyBehavior>
               <a className="px-8 py-4 bg-gold text-black font-semibold rounded-md hover:bg-opacity-90 transition duration-300 shadow-gold text-lg">
                 Schedule Your Session
               </a>
