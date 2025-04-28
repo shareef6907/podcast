@@ -140,12 +140,12 @@ export default function Services() {
               <div className="p-6">
                 <div className="h-48 rounded mb-4 overflow-hidden">
                   <img
-                    src="/images/1.jpg"
+                    src="/images/services/1.jpg"
                     alt="Sony a7s3 Cinema Camera"
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = "https://via.placeholder.com/400x300?text=Sony+a7s3";
+                      e.target.src = "/images/services/1.jpg";
                     }}
                   />
                 </div>
@@ -160,12 +160,12 @@ export default function Services() {
               <div className="p-6">
                 <div className="h-48 rounded mb-4 overflow-hidden">
                   <img
-                    src="/images/2.jpg"
+                    src="/images/services/2.jpg"
                     alt="Blackmagic ATEM Mini ISO Extreme"
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = "https://via.placeholder.com/400x300?text=Blackmagic+ATEM";
+                      e.target.src = "/images/services/2.jpg";
                     }}
                   />
                 </div>
@@ -180,12 +180,12 @@ export default function Services() {
               <div className="p-6">
                 <div className="h-48 rounded mb-4 overflow-hidden">
                   <img
-                    src="/images/3.jpg"
+                    src="/images/services/3.jpg"
                     alt="Professional Microphones"
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.target.onerror = null;
-                      e.target.src = "https://via.placeholder.com/400x300?text=Professional+Microphones";
+                      e.target.src = "/images/services/3.jpg";
                     }}
                   />
                 </div>
