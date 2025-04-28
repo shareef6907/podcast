@@ -1,9 +1,49 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Layout({ children, title = 'Bahrain Nights Podcast Studio' }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
+  const isBookingPage = router.pathname === '/booking' || router.pathname.startsWith('/booking/');
+  
+  // Video component that will be shown on all pages except booking
+  const VideoBackground = () => {
+    if (isBookingPage) return null;
+    
+    return (
+      <div className="video-container">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          fetchpriority="high"
+          poster="/images/video-poster.jpg"
+          className="w-full h-full object-cover"
+          style={{
+            willChange: 'transform',
+            backgroundColor: '#000000',
+          }}
+        >
+          <source src="/videos/Podcast header resized .mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="video-overlay">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-shadow text-gold">
+              Professional Podcast Studio, Anywhere in Bahrain
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-shadow">
+              Experience world-class podcasting with our mobile studio setup, featuring top-tier equipment and expert support. 12 Hours Delivery time.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
@@ -85,6 +125,9 @@ export default function Layout({ children, title = 'Bahrain Nights Podcast Studi
         </div>
       </header>
 
+      {/* Video background for all pages except booking */}
+      {router.pathname !== '/' && <VideoBackground />}
+      
       <main className="flex-grow">
         {children}
       </main>

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AnimatedSection from '../../components/AnimatedSection';
 
 export default function Booking() {
@@ -51,16 +51,49 @@ export default function Booking() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    const formData = {
-      ...formState,
-      toEmail: 'shareef@eventsbahrain.com',
-      subject: `Podcast Booking Request from ${formState.name}`
-    };
+    // Prepare the email message
+    const formattedMessage = `
+      New Booking Request from ${formState.name}
+      
+      Contact Information:
+      - Name: ${formState.name}
+      - Email: ${formState.email}
+      - Phone: ${formState.phone}
+      
+      Session Details:
+      - Date: ${formState.date}
+      - Time: ${formState.time}
+      - Location: ${formState.location}
+      - Duration: ${formState.duration} hours
+      - Package: ${formState.packageType}
+      - Cameras: ${formState.cameras.join(', ')}
+      - Additional Services: ${formState.additionalServices.join(', ')}
+      
+      Message:
+      ${formState.message}
+    `;
     
+    // The email would normally be sent via a backend service
+    // This is a client-side workaround to open the user's email client
+    const mailtoLink = `mailto:shareef@eventsbahrain.com?subject=Podcast Booking Request from ${formState.name}&body=${encodeURIComponent(formattedMessage)}`;
+    
+    // Also send to WhatsApp
+    const whatsappMessage = `*New Booking Request*\n\nName: ${formState.name}\nEmail: ${formState.email}\nPhone: ${formState.phone}\nDate: ${formState.date}\nTime: ${formState.time}\nLocation: ${formState.location}\nDuration: ${formState.duration} hours\nPackage: ${formState.packageType}\nCameras: ${formState.cameras.join(', ')}\nAdditional Services: ${formState.additionalServices.join(', ')}\n\nMessage: ${formState.message}`;
+    const whatsappLink = `https://wa.me/97339007750?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    // Open the email client
+    window.open(mailtoLink, '_blank');
+    
+    // After a brief delay, open WhatsApp
     setTimeout(() => {
-      console.log('Form submitted:', formData);
+      window.open(whatsappLink, '_blank');
+    }, 1000);
+    
+    // Show success message
+    setTimeout(() => {
       setIsSubmitting(false);
       setSubmitSuccess(true);
+      // Reset form after successful submission
       setFormState({
         name: '',
         email: '',
@@ -77,11 +110,40 @@ export default function Booking() {
     }, 1500);
   };
 
+  // Enhanced date picker script (using the browser's native date/time pickers)
+  useEffect(() => {
+    const dateInput = document.getElementById('date');
+    const timeInput = document.getElementById('time');
+    
+    if (dateInput) {
+      // Ensure calendar shows on click
+      dateInput.addEventListener('click', () => {
+        dateInput.showPicker();
+      });
+    }
+    
+    if (timeInput) {
+      // Ensure time picker shows on click
+      timeInput.addEventListener('click', () => {
+        timeInput.showPicker();
+      });
+    }
+    
+    return () => {
+      if (dateInput) {
+        dateInput.removeEventListener('click', () => {});
+      }
+      if (timeInput) {
+        timeInput.removeEventListener('click', () => {});
+      }
+    };
+  }, []);
+
   return (
     <>
       <Head>
         <title>Book Your Podcast Session - Bahrain Nights</title>
-        <meta name="description" content="Schedule your mobile podcast recording session with our professional team in Bahrain." />
+        <meta name="description" content="Schedule your mobile podcast recording session with our professional team in Bahrain. 12 hours delivery time guaranteed." />
         <meta name="keywords" content="podcast booking bahrain, podcast studio booking, professional podcast recording, mobile podcast recording, podcast session bahrain" />
       </Head>
 
@@ -89,7 +151,7 @@ export default function Booking() {
       <div className="bg-black text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gold">Book Your Session</h1>
-          <p className="text-xl max-w-3xl mx-auto">Reserve your professional podcast recording with our cinema-quality equipment</p>
+          <p className="text-xl max-w-3xl mx-auto">Reserve your professional podcast recording with our cinema-quality equipment. 12 hours delivery time guaranteed.</p>
         </div>
       </div>
 
@@ -163,9 +225,10 @@ export default function Booking() {
                           value={formState.date}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-white"
+                          className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-white cursor-pointer"
                           min={new Date().toISOString().split('T')[0]}
                         />
+                        <small className="text-gray-400 mt-1 block">Click to open calendar</small>
                       </div>
                       
                       <div className="mb-4">
@@ -177,8 +240,9 @@ export default function Booking() {
                           value={formState.time}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-white"
+                          className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-white cursor-pointer"
                         />
+                        <small className="text-gray-400 mt-1 block">Click to select time</small>
                       </div>
                       
                       <div className="mb-4 md:col-span-2">

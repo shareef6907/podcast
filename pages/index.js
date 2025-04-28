@@ -84,7 +84,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Experience world-class podcasting with our mobile studio setup, featuring top-tier equipment and expert support.
+              Experience world-class podcasting with our mobile studio setup, featuring top-tier equipment and expert support. 12 Hours Delivery time.
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row justify-center gap-4"
@@ -122,115 +122,17 @@ export default function Home() {
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gold">Book Your Podcast Session</h2>
             <p className="text-xl text-center text-white mb-12 max-w-3xl mx-auto">
-              Reserve your professional podcast recording session with our cutting-edge equipment and expert team
+              Reserve your professional podcast recording session with our cutting-edge equipment and expert team. Delivery within 12 hours.
             </p>
           </AnimatedSection>
           
-          <div className="max-w-5xl mx-auto">
-            {!submitSuccess ? (
-              <form onSubmit={handleSubmit} className="bg-gray-900 p-8 rounded-lg shadow-xl">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="mb-4">
-                    <label htmlFor="name" className="block text-gold font-bold mb-2">Your Name *</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formState.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-white"
-                      placeholder="Your Full Name"
-                    />
-                  </div>
-                  
-                  <div className="mb-4">
-                    <label htmlFor="email" className="block text-gold font-bold mb-2">Email Address *</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formState.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-white"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                  
-                  <div className="mb-4">
-                    <label htmlFor="phone" className="block text-gold font-bold mb-2">Phone Number *</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formState.phone}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-white"
-                      placeholder="+973 XXXX XXXX"
-                    />
-                  </div>
-                  
-                  <div className="mb-4">
-                    <label htmlFor="cameraPackage" className="block text-gold font-bold mb-2">Camera Package *</label>
-                    <select
-                      id="cameraPackage"
-                      name="cameraPackage"
-                      value={formState.cameraPackage}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-white"
-                    >
-                      <option value="standard">Standard (2 Cameras: Sony A7s3)</option>
-                      <option value="premium">Premium (4+ Cameras: Sony Fx3, Sony Fx6)</option>
-                      <option value="premium-plus">Premium Plus (ARRI Alexa + Full Suite)</option>
-                    </select>
-                  </div>
-                  
-                  <div className="mb-4 md:col-span-2">
-                    <label htmlFor="message" className="block text-gold font-bold mb-2">Additional Details</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formState.message}
-                      onChange={handleChange}
-                      rows="4"
-                      className="w-full px-4 py-2 bg-black border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold text-white"
-                      placeholder="Tell us about your podcast, location preferences, and any other requirements."
-                    ></textarea>
-                  </div>
-                </div>
-                
-                <div className="text-center mt-6">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className={`py-3 px-8 rounded-full font-bold ${isSubmitting ? 'bg-gray-500' : 'bg-gold hover:bg-darkgold text-black'} transition duration-300`}
-                  >
-                    {isSubmitting ? 'Submitting...' : 'Book Your Session'}
-                  </button>
-                </div>
-              </form>
-            ) : (
-              <div className="bg-gray-900 p-8 rounded-lg shadow-xl text-center">
-                <div className="text-gold mb-4">
-                  <svg className="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-                  </svg>
-                </div>
-                <h2 className="text-2xl font-bold mb-4 text-white">Booking Request Received!</h2>
-                <p className="text-lg mb-6 text-gray-300">
-                  Thank you for your booking request. Our team will contact you shortly to confirm your session and discuss the details.
-                </p>
-                <button
-                  onClick={() => setSubmitSuccess(false)}
-                  className="py-2 px-6 bg-gold text-black font-bold rounded-full hover:bg-darkgold transition duration-300"
-                >
-                  Book Another Session
-                </button>
-              </div>
-            )}
+          <div className="max-w-5xl mx-auto text-center">
+            <Link href="/booking">
+              <span className="inline-block bg-gold hover:bg-darkgold text-black font-bold py-4 px-10 rounded-full transition duration-300 text-xl">
+                Complete Booking
+              </span>
+            </Link>
+            <p className="mt-4 text-gray-400">For full options including camera selection, visit our booking page</p>
           </div>
         </div>
       </section>
