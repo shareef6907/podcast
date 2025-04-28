@@ -126,11 +126,36 @@ export default function Blog() {
             <AnimatedSection>
               <h2 className="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
               <p className="text-lg mb-8">Stay updated with the latest podcast tips, trends, and Bahrain Nights news.</p>
-              <form className="flex flex-col sm:flex-row gap-2">
+              <form 
+                className="flex flex-col sm:flex-row gap-2"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const email = e.target.elements.email.value;
+                  
+                  if (!email) {
+                    alert('Please enter your email address');
+                    return;
+                  }
+                  
+                  // Create mailto link to send the subscription
+                  const subject = 'New Newsletter Subscription';
+                  const body = `New subscription request from: ${email}`;
+                  const mailtoLink = `mailto:shareef@eventsbahrain.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                  
+                  // Open email client
+                  window.open(mailtoLink, '_blank');
+                  
+                  // Reset form
+                  e.target.reset();
+                  alert('Thank you for subscribing to our newsletter!');
+                }}
+              >
                 <input 
-                  type="email" 
+                  type="email"
+                  name="email" 
                   placeholder="Your email address" 
                   className="px-4 py-3 rounded-full flex-grow focus:outline-none focus:ring-2 focus:ring-black"
+                  required
                 />
                 <button 
                   type="submit" 
