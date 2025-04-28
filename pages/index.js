@@ -65,7 +65,7 @@ export default function Home() {
             backgroundColor: '#000000',
           }}
         >
-          <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+          <source src="/videos/Podcast updated 1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="video-overlay">

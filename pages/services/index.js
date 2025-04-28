@@ -110,11 +110,6 @@ export default function Services() {
           </AnimatedSection>
           
           <AnimatedSection className="p-6 bg-gray-900 rounded-lg shadow-xl">
-            <div className="aspect-w-16 aspect-h-9 mb-6">
-              <div className="w-full h-64 bg-gray-800 rounded-lg flex items-center justify-center">
-                <p className="text-gray-400">Interactive map showing our service area in Bahrain and Saudi Arabia (within 150km)</p>
-              </div>
-            </div>
             <p className="text-center mb-6">
               Our mobile podcast studio brings professional equipment directly to your location, whether you're in Manama, 
               Riffa, Muharraq, Dammam, Al Khobar, or anywhere within our service area.
@@ -141,7 +136,7 @@ export default function Services() {
                 <div className="h-48 rounded mb-4 overflow-hidden">
                   <img
                     src="/images/services/1.jpg"
-                    alt="Sony a7s3 Cinema Camera"
+                    alt="Sony FX6 Cinema Camera"
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.target.onerror = null;
@@ -149,19 +144,19 @@ export default function Services() {
                     }}
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-gold mb-2">Sony a7s3 Cinema Camera</h3>
+                <h3 className="text-2xl font-bold text-gold mb-2">Sony FX6 Cinema Camera</h3>
                 <p className="text-gray-300 mb-4">
-                  Our professional Sony a7s3 cameras deliver stunning 4K video with exceptional low-light performance, perfect for capturing cinematic podcast footage.
+                  Our professional Sony FX6 cinema camera delivers stunning 4K video with exceptional dynamic range and low-light performance, perfect for capturing cinematic podcast footage at the highest quality.
                 </p>
               </div>
             </div>
-            
+
             <div className="bg-gray-900 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
               <div className="p-6">
                 <div className="h-48 rounded mb-4 overflow-hidden">
                   <img
                     src="/images/services/2.jpg"
-                    alt="Blackmagic ATEM Mini ISO Extreme"
+                    alt="Sony a7S III Camera"
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.target.onerror = null;
@@ -169,9 +164,9 @@ export default function Services() {
                     }}
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-gold mb-2">Blackmagic ATEM Mini ISO Extreme</h3>
+                <h3 className="text-2xl font-bold text-gold mb-2">Sony a7S III Camera</h3>
                 <p className="text-gray-300 mb-4">
-                  Multi-camera production made easy with our Blackmagic ATEM Mini ISO Extreme, allowing for seamless switching between multiple angles.
+                  Our Sony a7S III cameras provide incredible 4K video with exceptional low-light capabilities, perfect for capturing detailed footage from multiple angles during your podcast session.
                 </p>
               </div>
             </div>
@@ -181,7 +176,7 @@ export default function Services() {
                 <div className="h-48 rounded mb-4 overflow-hidden">
                   <img
                     src="/images/services/3.jpg"
-                    alt="Professional Microphones"
+                    alt="Blackmagic ATEM Mini ISO Extreme"
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.target.onerror = null;
@@ -189,9 +184,9 @@ export default function Services() {
                     }}
                   />
                 </div>
-                <h3 className="text-2xl font-bold text-gold mb-2">Professional Microphones</h3>
+                <h3 className="text-2xl font-bold text-gold mb-2">Blackmagic ATEM Mini ISO Extreme</h3>
                 <p className="text-gray-300 mb-4">
-                  Our broadcast-quality microphones ensure crystal clear audio for your podcast, capturing every nuance of the conversation.
+                  Multi-camera production made easy with our Blackmagic ATEM Mini ISO Extreme, allowing for seamless switching between multiple angles.
                 </p>
               </div>
             </div>
@@ -482,12 +477,26 @@ export default function Services() {
             
             <AnimatedSection>
               <div className="h-80 bg-gray-800 rounded-lg shadow-lg overflow-hidden">
-                {/* Interactive map goes here */}
                 <div className="w-full h-full flex items-center justify-center bg-gray-700">
-                  <p className="text-center p-4">
-                    <span className="text-gold font-bold block mb-2">Interactive Map Coming Soon</span>
-                    Our service area includes all of Bahrain and Eastern Saudi Arabia within 150km.
-                  </p>
+                  <div className="text-center p-4">
+                    <span className="text-gold font-bold block mb-2">Contact Us Today</span>
+                    <p className="mb-4">Our service area includes all of Bahrain and Eastern Saudi Arabia within 150km.</p>
+                    <div className="flex justify-center gap-4">
+                      <a href="tel:+97333333333" className="bg-gold hover:bg-darkgold text-black font-bold py-2 px-4 rounded-full transition duration-300 inline-flex items-center">
+                        <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                        </svg>
+                        Call
+                      </a>
+                      <a href="mailto:shareef@eventsbahrain.com" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 inline-flex items-center">
+                        <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                        </svg>
+                        Email
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </AnimatedSection>
@@ -495,18 +504,19 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Location Section with Map - Updated to include Bahrain and Saudi Arabia note */}
+      {/* Location Section */}
       <section className="py-16 bg-gray-900">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gold mb-12">Studio Location</h2>
           <p className="text-white text-center mb-8">
-            Our state-of-the-art podcast studio is conveniently located in the heart of Bahrain, easily accessible from both Bahrain and Saudi Arabia. Our interactive map shows locations within 150km range.
+            Our state-of-the-art podcast studio is conveniently located in the heart of Bahrain, easily accessible from both Bahrain and Saudi Arabia. We cover locations within a 150km range.
           </p>
-          <div className="rounded-lg overflow-hidden shadow-lg">
-            {/* Replace with your actual map component or iframe */}
-            <div className="h-96 bg-gray-800 flex items-center justify-center">
-              <p className="text-gray-400">Interactive map will be displayed here</p>
-            </div>
+          <div className="text-center">
+            <Link href="/booking" legacyBehavior>
+              <a className="bg-gold text-black font-bold py-3 px-8 rounded-lg hover:bg-yellow-500 transition">
+                Book Your Session Today
+              </a>
+            </Link>
           </div>
         </div>
       </section>

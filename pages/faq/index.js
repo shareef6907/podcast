@@ -95,9 +95,9 @@ export default function FAQ() {
                       className="flex justify-between items-center w-full p-5 bg-white hover:bg-gray-50 transition duration-200"
                       onClick={() => toggleFAQ(index)}
                     >
-                      <h3 className="text-lg font-semibold text-left">{faq.question}</h3>
+                      <h3 className="text-lg font-semibold text-left text-black">{faq.question}</h3>
                       <svg 
-                        className={`w-5 h-5 transition-transform duration-300 ${activeIndex === index ? 'transform rotate-180' : ''}`} 
+                        className={`w-5 h-5 transition-transform duration-300 text-black ${activeIndex === index ? 'transform rotate-180' : ''}`} 
                         fill="currentColor" 
                         viewBox="0 0 20 20" 
                         xmlns="http://www.w3.org/2000/svg"
@@ -106,11 +106,11 @@ export default function FAQ() {
                       </svg>
                     </button>
                     <div 
-                      className={`px-5 pt-0 overflow-hidden transition-all duration-300 ${
+                      className={`px-5 pt-0 overflow-hidden transition-all duration-300 bg-white ${
                         activeIndex === index ? 'max-h-96 pb-5' : 'max-h-0'
                       }`}
                     >
-                      <p className="text-gray-600">{faq.answer}</p>
+                      <p className="text-gray-800">{faq.answer}</p>
                     </div>
                   </div>
                 </AnimatedSection>

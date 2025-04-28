@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import AnimatedSection from '../../components/AnimatedSection';
 import { useState } from 'react';
+import Link from 'next/link';
 // Remove mapbox imports
 // import dynamic from 'next/dynamic';
 
@@ -40,34 +41,6 @@ export default function About() {
               </p>
               <p className="text-lg">
                 At Bahrain Nights, we believe that everyone deserves access to professional podcasting resources. Our mobile studio setup eliminates barriers to entry, bringing cinema-quality recording capabilities directly to you, no matter where you are in Bahrain.
-              </p>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Story / History */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <AnimatedSection>
-              <img 
-                src="/images/founder.jpg" 
-                alt="Shareef Ali, Founder" 
-                className="rounded-lg shadow-xl w-full"
-                onError={(e) => e.target.src = 'https://via.placeholder.com/600x400?text=Shareef+Ali'} 
-              />
-            </AnimatedSection>
-            <AnimatedSection delay={0.2}>
-              <h2 className="text-3xl font-bold mb-6">Our Story</h2>
-              <p className="mb-4">
-                Bahrain Nights was established in 2014 by Shareef Ali, a passionate media professional with a vision to elevate the podcasting scene in Bahrain.
-              </p>
-              <p className="mb-4">
-                What started as a small operation has grown into a trusted name in mobile professional podcast production, serving clients from all over Bahrain and neighboring regions.
-              </p>
-              <p>
-                Our journey has been defined by a commitment to quality, innovation, and exceptional service. Through continuous investment in cutting-edge equipment and technical expertise, we've positioned ourselves as the premier provider of mobile podcast solutions in the region.
               </p>
             </AnimatedSection>
           </div>
@@ -135,14 +108,14 @@ export default function About() {
             <p className="text-center max-w-3xl mx-auto mb-12">
               We proudly serve clients throughout Bahrain and have extended our services to neighboring areas in Saudi Arabia, including Dammam, Khobar, Dhahran, and Jubail.
             </p>
-          </AnimatedSection>
-          
-          <div className="h-96 rounded-lg overflow-hidden shadow-xl">
-            {/* Placeholder for actual map */}
-            <div className="bg-gray-200 w-full h-full flex items-center justify-center">
-              <p className="text-lg">Interactive Map Will Be Loaded Here</p>
+            <div className="text-center">
+              <Link href="/booking" legacyBehavior>
+                <a className="bg-gold text-black font-bold py-3 px-8 rounded-lg hover:bg-yellow-500 transition">
+                  Book Your Session Today
+                </a>
+              </Link>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 

@@ -88,7 +88,10 @@ export default function Blog() {
                       src={post.image} 
                       alt={post.title} 
                       className="w-full h-full object-cover"
-                      onError={(e) => e.target.src = `https://via.placeholder.com/600x400?text=${post.title.replace(/\s+/g, '+')}`} 
+                      onError={(e) => {
+                        console.error(`Failed to load image: ${post.image}`);
+                        e.target.src = `https://via.placeholder.com/600x400?text=${post.title.replace(/\s+/g, '+')}`;
+                      }} 
                     />
                   </div>
                   <div className="p-6 flex-grow">
