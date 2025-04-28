@@ -71,19 +71,19 @@ export default function Blog() {
       {/* Header Banner */}
       <div className="bg-black text-white py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Podcast Insights</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gold">Podcast Insights</h1>
           <p className="text-xl max-w-3xl mx-auto">Tips, trends, and inspiration for podcasters in Bahrain and beyond</p>
         </div>
       </div>
 
       {/* Blog Posts Grid */}
-      <section className="py-16">
+      <section className="py-16 bg-black">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
               <AnimatedSection key={post.id} delay={index * 0.1}>
-                <div className="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
-                  <div className="h-48 bg-gray-200 relative">
+                <div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden h-full flex flex-col border border-gray-800">
+                  <div className="h-48 bg-gray-800 relative">
                     <img 
                       src={post.image} 
                       alt={post.title} 
@@ -92,17 +92,17 @@ export default function Blog() {
                     />
                   </div>
                   <div className="p-6 flex-grow">
-                    <div className="flex items-center text-sm text-gray-500 mb-2">
+                    <div className="flex items-center text-sm text-gray-400 mb-2">
                       <span>{post.date}</span>
                       <span className="mx-2">•</span>
                       <span>{post.author}</span>
                     </div>
-                    <h2 className="text-xl font-bold mb-3 hover:text-gold transition">
+                    <h2 className="text-xl font-bold mb-3 text-gray-300 hover:text-gold transition duration-300 shadow-sm">
                       <Link href={`/blog/${post.slug}`}>
                         <span>{post.title}</span>
                       </Link>
                     </h2>
-                    <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                    <p className="text-gray-400 mb-4">{post.excerpt}</p>
                     <Link href={`/blog/${post.slug}`}>
                       <span className="text-gold font-semibold hover:underline inline-flex items-center">
                         Read More

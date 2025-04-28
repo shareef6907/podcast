@@ -224,7 +224,7 @@ export default function BlogPost() {
         </div>
         <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-end pb-8">
           <AnimatedSection>
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-gold">{post.title}</h1>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-gold text-shadow">{post.title}</h1>
             <div className="flex items-center text-sm text-gray-300 mb-4">
               <span>{post.date}</span>
               <span className="mx-2">•</span>
