@@ -184,11 +184,28 @@ export default function Layout({ children, title = 'Bahrain Nights Podcast Studi
               </div>
             </div>
           </div>
+          
+          {/* BahrainNights Link */}
           <div className="mt-8 border-t border-gray-800 pt-6 text-center">
+            <p className="text-gray-400">
+              Discover events, venues & nightlife:{' '}
+              <a 
+                href="https://www.bahrainnights.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gold hover:text-amber-400 transition font-medium"
+              >
+                BahrainNights.com
+              </a>
+            </p>
+          </div>
+          
+          {/* Copyright */}
+          <div className="mt-6 border-t border-gray-800 pt-6 text-center">
             <p>© {new Date().getFullYear()} Bahrain Nights. All rights reserved.</p>
           </div>
         </div>
       </footer>
     </div>
   );
-} 
+}
