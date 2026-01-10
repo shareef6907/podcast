@@ -66,7 +66,23 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* BahrainNights Link */}
         <div className="border-t border-gray-800 mt-10 pt-6 text-center">
+          <p className="text-gray-400">
+            Discover events, venues & nightlife:{' '}
+            <a 
+              href="https://www.bahrainnights.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gold hover:text-yellow-400 transition font-medium"
+            >
+              BahrainNights.com
+            </a>
+          </p>
+        </div>
+
+        {/* Copyright */}
+        <div className="border-t border-gray-800 mt-6 pt-6 text-center">
           <p className="text-gray-500">
             &copy; {new Date().getFullYear()} Bahrain Nights. All rights reserved.
           </p>
@@ -74,4 +90,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-} 
+}
