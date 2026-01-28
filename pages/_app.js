@@ -2,19 +2,17 @@ import '../styles/globals.css';
 import Layout from '../components/Layout';
 import Head from 'next/head';
 
-function MyApp({ Component, pageProps }) {
+export default function App({ Component, pageProps }) {
+  // Check if the page has its own layout
+  const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>);
+
   return (
     <>
       <Head>
-        <link rel="dns-prefetch" href="https://storage.googleapis.com" />
-        <link rel="preconnect" href="https://storage.googleapis.com" />
-        <link rel="preload" href="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" as="video" type="video/mp4" fetchpriority="high" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      {getLayout(<Component {...pageProps} />)}
     </>
   );
 }
-
-export default MyApp; 
