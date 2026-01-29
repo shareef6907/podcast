@@ -8,6 +8,7 @@ export default function Home() {
     { number: '100+', label: 'Episodes Produced' },
     { number: '12h', label: 'Fast Delivery' },
     { number: '4K', label: 'Cinema Quality' },
+    { number: '🎙️', label: 'Broadcast Audio' },
   ];
 
   const services = [
