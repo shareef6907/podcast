@@ -251,6 +251,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Saudi Arabia — Sister Company */}
+      <section className="py-16 bg-gray-900/50 border-y border-gray-800">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center">
+            <span className="text-gold text-sm font-semibold tracking-wider uppercase">Beyond Bahrain</span>
+            <h3 className="text-2xl font-bold text-white mt-2 mb-3">
+              We Also Serve Saudi Arabia
+            </h3>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Through our sister company <a
+                href="https://www.premieralive.com/en/services/podcast-filming-saudi-arabia"
+                target="_blank" rel="noopener"
+                className="text-gold hover:text-yellow-400 underline transition-colors"
+              >Premiera Live</a> in Al Khobar, we deliver podcast filming, film production, and full studio productions across Khobar, Dammam, Riyadh, and the Eastern Province.{' '}
+              <a
+                href="https://www.premieralive.com/en/services/podcast-filming-saudi-arabia"
+                target="_blank" rel="noopener"
+                className="text-gold hover:text-yellow-400 underline transition-colors"
+              >Visit premieralive.com</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div className="container mx-auto px-4">

@@ -131,8 +131,9 @@ export default function Footer() {
             <p className="text-gray-500 text-sm">
               &copy; {new Date().getFullYear()} Podcast Bahrain. All rights reserved.
             </p>
-            <div className="flex items-center gap-6 text-sm text-gray-500">
+            <div className="flex flex-col md:flex-row items-center gap-4 text-sm text-gray-500 text-center md:text-left">
               <span>Part of <a href="https://www.bahrainnights.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-yellow-400 transition-colors">Bahrain Nights</a></span>
+              <span>Sister company: <a href="https://www.premieralive.com" target="_blank" rel="noopener" className="text-gold hover:text-yellow-400 transition-colors">Premiera Live</a> — Film Production &amp; Podcast Filming in Saudi Arabia</span>
             </div>
           </div>
         </div>
