@@ -45,19 +45,16 @@ export default function Home() {
   const packages = [
     {
       name: 'Starter',
-      price: '280',
       features: ['2 Hours Recording', '1 Camera Setup', 'Basic Editing', 'Digital Delivery'],
       popular: false,
     },
     {
       name: 'Professional',
-      price: '520',
       features: ['4 Hours Recording', 'Multi-Camera (2-3)', 'Pro Editing & Color', 'Social Media Clips', 'Priority Delivery'],
       popular: true,
     },
     {
       name: 'Premium',
-      price: '840',
       features: ['Full Day Recording', '4+ Cameras with Director', 'Premium Mastering', 'Marketing Package', 'Distribution Support'],
       popular: false,
     },
@@ -346,12 +343,12 @@ export default function Home() {
       <section className="py-20 bg-black">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center mb-16">
-            <span className="text-gold text-sm font-semibold tracking-wider uppercase">Transparent Pricing</span>
+            <span className="text-gold text-sm font-semibold tracking-wider uppercase">Our Packages</span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mt-4 mb-6">
-              Choose Your Package
+              Everything You Need, Delivered
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Clear pricing, no hidden fees. All packages include equipment, technician, and delivery.
+              Every package includes equipment, technician, and delivery. Get a tailored quote for your project.
             </p>
           </AnimatedSection>
           
@@ -366,8 +363,17 @@ export default function Home() {
                   )}
                   <div className={`p-8 ${pkg.popular ? 'pt-14' : ''}`}>
                     <h3 className="text-xl font-bold text-white mb-2">{pkg.name}</h3>
-                    <div className="flex items-baseline gap-1 mb-6">
-                      <span className="text-4xl font-bold text-gold">BHD {pkg.price}</span>
+                    <div className="mb-6">
+                      <a
+                        href={`https://wa.me/97339007750?text=Hi!%20I%27m%20interested%20in%20the%20${pkg.name}%20package.`}
+                        className={`inline-block w-full py-3 px-6 rounded-full font-bold text-center transition-all duration-300 ${
+                          pkg.popular
+                            ? 'bg-gold hover:bg-yellow-400 text-black'
+                            : 'bg-gray-800 hover:bg-gold text-white hover:text-black'
+                        }`}
+                      >
+                        Request a Quote
+                      </a>
                     </div>
                     <ul className="space-y-3 mb-8">
                       {pkg.features.map((feature) => (
@@ -380,14 +386,14 @@ export default function Home() {
                       ))}
                     </ul>
                     <a
-                      href={`https://wa.me/97339007750?text=Hi!%20I%27m%20interested%20in%20the%20${pkg.name}%20package%20(BHD%20${pkg.price}).`}
+                      href={`https://wa.me/97339007750?text=Hi!%20I%27m%20interested%20in%20the%20${pkg.name}%20package.`}
                       className={`block w-full py-3 rounded-full font-bold text-center transition-all duration-300 ${
-                        pkg.popular 
-                          ? 'bg-gold hover:bg-yellow-400 text-black' 
+                        pkg.popular
+                          ? 'bg-gold hover:bg-yellow-400 text-black'
                           : 'bg-gray-800 hover:bg-gold text-white hover:text-black'
                       }`}
                     >
-                      Book Now
+                      Request a Quote
                     </a>
                   </div>
                 </div>

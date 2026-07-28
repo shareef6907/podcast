@@ -44,7 +44,6 @@ export default function Services() {
   const packages = [
     {
       name: 'Starter',
-      price: '280',
       description: 'Perfect for first-time podcasters',
       features: [
         '2 Hours Recording Time',
@@ -58,7 +57,6 @@ export default function Services() {
     },
     {
       name: 'Professional',
-      price: '520',
       description: 'Most popular for serious creators',
       features: [
         '4 Hours Recording Time',
@@ -72,7 +70,6 @@ export default function Services() {
     },
     {
       name: 'Premium',
-      price: '840',
       description: 'For professional productions',
       features: [
         'Full Day Recording',
@@ -90,8 +87,8 @@ export default function Services() {
   return (
     <>
       <Head>
-        <title>Services & Pricing | Podcast Bahrain</title>
-        <meta name="description" content="Professional podcast production services in Bahrain. Multi-camera setups, mobile studio, editing, and distribution. Packages from BHD 280." />
+        <title>Services | Podcast Bahrain</title>
+        <meta name="description" content="Professional podcast production services in Bahrain. Multi-camera setups, mobile studio, editing, and distribution. Get a tailored quote for your project." />
         <link rel="canonical" href="https://podcastbahrain.com/services" />
       </Head>
 
@@ -285,10 +282,10 @@ export default function Services() {
       <section className="py-20 bg-black">
         <div className="container mx-auto px-4">
           <AnimatedSection className="text-center mb-16">
-            <span className="text-gold text-sm font-semibold tracking-wider uppercase">Pricing</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mt-4 mb-4">Transparent Packages</h2>
+            <span className="text-gold text-sm font-semibold tracking-wider uppercase">Packages</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mt-4 mb-4">Everything Included, Tailored to You</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Clear pricing with everything included. No hidden fees.
+              Every package covers equipment, technician, and delivery. Get a quote for your specific needs.
             </p>
           </AnimatedSection>
 
@@ -306,8 +303,17 @@ export default function Services() {
                   <div className="p-8 flex-grow flex flex-col">
                     <h3 className="text-xl font-bold text-white mb-1">{pkg.name}</h3>
                     <p className="text-gray-500 text-sm mb-4">{pkg.description}</p>
-                    <div className="flex items-baseline gap-1 mb-6">
-                      <span className="text-4xl font-bold text-gold">BHD {pkg.price}</span>
+                    <div className="mb-6">
+                      <a
+                        href={`https://wa.me/97339007750?text=Hi!%20I%27m%20interested%20in%20the%20${pkg.name}%20package.`}
+                        className={`block w-full py-3 rounded-full font-bold text-center transition-all ${
+                          pkg.popular
+                            ? 'bg-gold hover:bg-yellow-400 text-black'
+                            : 'bg-gray-800 hover:bg-gold text-white hover:text-black'
+                        }`}
+                      >
+                        Request a Quote
+                      </a>
                     </div>
                     <ul className="space-y-3 mb-8 flex-grow">
                       {pkg.features.map((feature) => (
@@ -320,14 +326,14 @@ export default function Services() {
                       ))}
                     </ul>
                     <a
-                      href={`https://wa.me/97339007750?text=Hi!%20I%27m%20interested%20in%20the%20${pkg.name}%20package%20(BHD%20${pkg.price}).`}
+                      href={`https://wa.me/97339007750?text=Hi!%20I%27m%20interested%20in%20the%20${pkg.name}%20package.`}
                       className={`block w-full py-3 rounded-full font-bold text-center transition-all ${
-                        pkg.popular 
-                          ? 'bg-gold hover:bg-yellow-400 text-black' 
+                        pkg.popular
+                          ? 'bg-gold hover:bg-yellow-400 text-black'
                           : 'bg-gray-800 hover:bg-gold text-white hover:text-black'
                       }`}
                     >
-                      Book Now
+                      Request a Quote
                     </a>
                   </div>
                 </div>

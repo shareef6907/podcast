@@ -262,9 +262,9 @@ Message: ${formState.message || 'No additional message'}`;
                             onChange={handleChange}
                             className="w-full px-4 py-3 bg-black border border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent text-white transition-all"
                           >
-                            <option value="basic">Basic (BHD 280)</option>
-                            <option value="professional">Professional (BHD 520)</option>
-                            <option value="premium">Premium (BHD 840)</option>
+                            <option value="basic">Starter</option>
+                            <option value="professional">Professional</option>
+                            <option value="premium">Premium</option>
                             <option value="custom">Custom Quote</option>
                           </select>
                         </div>
