@@ -92,9 +92,12 @@ Message: ${formState.message || 'No additional message'}`;
   return (
     <>
       <Head>
-        <title>Book Your Session | Podcast Bahrain - Professional Podcast Production</title>
+        <title>Book Your Session | Podcast Bahrain by Premiera Live</title>
         <meta name="description" content="Book your professional podcast recording session. Fill out the form or contact us directly via WhatsApp for instant booking." />
-      </Head>
+      
+        <meta property="og:title" content="Book Your Session | Podcast Bahrain by Premiera Live" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Premiera Live" /></Head>
 
       {/* Hero Banner */}
       <section className="pt-32 pb-16 bg-gradient-to-b from-gray-900 to-black">

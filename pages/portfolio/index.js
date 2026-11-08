@@ -27,9 +27,12 @@ export default function Portfolio() {
   return (
     <>
       <Head>
-        <title>Portfolio | Podcast Bahrain - Our Work</title>
+        <title>Portfolio | Podcast Bahrain by Premiera Live</title>
         <meta name="description" content="See examples of our professional podcast productions. Cinema-quality video podcasts for businesses, creators, and thought leaders in Bahrain." />
-      </Head>
+      
+        <meta property="og:title" content="Portfolio | Podcast Bahrain by Premiera Live" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Premiera Live" /></Head>
 
       {/* Hero Banner */}
       <section className="pt-32 pb-20 bg-gradient-to-b from-gray-900 to-black">
