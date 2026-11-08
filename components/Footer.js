@@ -8,7 +8,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-4">
-              <span className="text-2xl font-bold text-gold">Podcast Bahrain</span>
+              <span className="text-2xl font-bold text-gold">Premiera Live</span>
+              <span className="block text-sm text-gray-400 mt-1">Podcast Bahrain</span>
             </Link>
             <p className="text-gray-400 mb-6 max-w-md">
               Professional mobile podcast studio bringing cinema-quality production to your doorstep. 
@@ -129,7 +130,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-sm">
-              &copy; {new Date().getFullYear()} Podcast Bahrain. All rights reserved.
+              &copy; {new Date().getFullYear()} Bahrain Nights Premiera Live. All rights reserved. CR 113587-1
             </p>
             <div className="flex flex-col md:flex-row items-center gap-4 text-sm text-gray-500 text-center md:text-left">
               <span>Part of <a href="https://www.bahrainnights.com" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-yellow-400 transition-colors">Bahrain Nights</a></span>

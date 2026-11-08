@@ -65,7 +65,7 @@ export default function FAQ() {
   return (
     <>
       <Head>
-        <title>Frequently Asked Questions - Bahrain Nights Podcast Studio</title>
+        <title>Frequently Asked Questions - Podcast Bahrain by Premiera Live</title>
         <meta name="description" content="Find answers to common questions about our mobile podcast recording services in Bahrain." />
       </Head>
 

@@ -64,7 +64,7 @@ export default function Blog() {
   return (
     <>
       <Head>
-        <title>Blog - Bahrain Nights Podcast Studio</title>
+        <title>Blog - Podcast Bahrain by Premiera Live</title>
         <meta name="description" content="Professional Podcast filming in Bahrain! Expert filmmaker creates high-quality video podcasts for Creators & Businesses. Book now for studio or on-location shoots!" />
       </Head>
 
@@ -128,7 +128,7 @@ export default function Blog() {
           <div className="max-w-xl mx-auto text-center">
             <AnimatedSection>
               <h2 className="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
-              <p className="text-lg mb-8">Stay updated with the latest podcast tips, trends, and Bahrain Nights news.</p>
+              <p className="text-lg mb-8">Stay updated with the latest podcast tips, trends, and Premiera Live news.</p>
               <form 
                 className="flex flex-col sm:flex-row gap-2"
                 onSubmit={(e) => {
