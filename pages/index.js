@@ -1,7 +1,7 @@
-import Head from 'next/head';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
+import Seo from '../components/Seo';
+import { organizationJsonLd } from '../lib/structured-data';
 
 export default function Home() {
   const stats = [
@@ -80,16 +80,13 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Podcast Bahrain by Premiera Live | Mobile Podcast Studio</title>
-        <meta name="description" content="Professional podcast filming in Bahrain. Cinema-quality multi-camera setups, mobile studio service, 12-hour delivery. Sony FX6, Blackmagic ATEM. Book now!" />
-        <meta name="keywords" content="podcast bahrain, podcast recording bahrain, video podcast, mobile podcast studio, professional podcast production, bahrain content creation" />
-        <meta property="og:title" content="Podcast Bahrain by Premiera Live | Mobile Podcast Studio" />
-        <meta property="og:description" content="Cinema-quality podcast production, anywhere in Bahrain. 12-hour delivery." />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Premiera Live" />
-        <link rel="canonical" href="https://podcastbahrain.com" />
-      </Head>
+      <Seo
+        title="Podcast Bahrain by Premiera Live | Mobile Podcast Studio"
+        description="Professional podcast filming in Bahrain. Cinema-quality multi-camera setups, mobile studio service, 12-hour delivery. Sony FX6, Blackmagic ATEM. Book now!"
+        keywords="podcast bahrain, podcast recording bahrain, video podcast, mobile podcast studio, professional podcast production, bahrain content creation"
+        path="/"
+        jsonLd={organizationJsonLd()}
+      />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">

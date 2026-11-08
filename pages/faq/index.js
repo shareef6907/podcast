@@ -1,60 +1,66 @@
-import Head from 'next/head';
+import Link from 'next/link';
 import { useState } from 'react';
 import AnimatedSection from '../../components/AnimatedSection';
+import Seo from '../../components/Seo';
+import { faqJsonLd } from '../../lib/structured-data';
 
+/**
+ * FAQ content lives at module scope so the same list drives both the rendered
+ * accordion and the FAQPage structured data. They cannot drift apart.
+ */
+const faqs = [
+  {
+    id: 1,
+    question: "How do I book a podcast recording session?",
+    answer: "You can book a session through our online booking form, or by contacting us directly via phone or WhatsApp at +973 3900 7750. We recommend booking at least one week in advance to ensure availability, though we can accommodate last-minute requests when possible."
+  },
+  {
+    id: 2,
+    question: "What's included in your standard setup?",
+    answer: "Our standard setup includes one Sony cinema camera, two professional microphones, all necessary audio interfaces and monitoring equipment, basic lighting, and technical support throughout your session. You'll receive the raw audio and video files after recording."
+  },
+  {
+    id: 3,
+    question: "Do you only service Bahrain, or can you travel to other countries?",
+    answer: "While we're primarily based in Bahrain, we do offer our services in neighboring areas in Saudi Arabia, including Dammam, Khobar, Dhahran, and Jubail. For other international locations, please contact us directly to discuss options and additional travel fees."
+  },
+  {
+    id: 4,
+    question: "How much space do you need for the setup?",
+    answer: "Our minimal setup requires approximately 3x3 meters of space, though more space is preferable for optimal results. We can adapt to various environments, but a quiet room with minimal echo is best for audio quality."
+  },
+  {
+    id: 5,
+    question: "How long does it take to set up the equipment?",
+    answer: "Our team typically arrives 60-90 minutes before your scheduled recording time to set up and test all equipment. The exact setup time depends on the complexity of your chosen package and location specifications."
+  },
+  {
+    id: 6,
+    question: "Can you help with podcast editing and publishing?",
+    answer: "Yes, we offer post-production services including audio editing, video editing, color grading, intro/outro addition, and podcast distribution assistance. These services can be added to any recording package for an additional fee."
+  },
+  {
+    id: 7,
+    question: "What types of payment do you accept?",
+    answer: "We accept bank transfers, credit/debit cards, and cash payments. For most bookings, we require a 50% deposit to secure your date, with the balance due on the day of recording."
+  },
+  {
+    id: 8,
+    question: "What if I need to cancel or reschedule my booking?",
+    answer: "We understand plans change. Cancellations made more than 48 hours before your session are eligible for a full refund or rescheduling without fees. Cancellations within 48 hours may incur a 25% fee or can be rescheduled for a small administration charge."
+  },
+  {
+    id: 9,
+    question: "Can you accommodate multiple guests or panel discussions?",
+    answer: "Absolutely! Our premium and professional packages include multiple microphones and camera setups specifically designed for interviews and panel discussions. Let us know how many participants you'll have when booking so we can prepare accordingly."
+  },
+  {
+    id: 10,
+    question: "I've never recorded a podcast before. Can you provide guidance?",
+    answer: "Yes, our team is experienced in working with first-time podcasters. We provide technical guidance during setup and recording, and can offer basic content and presentation tips if desired. We aim to make the experience comfortable and professional for podcasters of all experience levels."
+  }
+];
 export default function FAQ() {
-  const faqs = [
-    {
-      id: 1,
-      question: "How do I book a podcast recording session?",
-      answer: "You can book a session through our online booking form, or by contacting us directly via phone or WhatsApp at +973 3900 7750. We recommend booking at least one week in advance to ensure availability, though we can accommodate last-minute requests when possible."
-    },
-    {
-      id: 2,
-      question: "What's included in your standard setup?",
-      answer: "Our standard setup includes one Sony cinema camera, two professional microphones, all necessary audio interfaces and monitoring equipment, basic lighting, and technical support throughout your session. You'll receive the raw audio and video files after recording."
-    },
-    {
-      id: 3,
-      question: "Do you only service Bahrain, or can you travel to other countries?",
-      answer: "While we're primarily based in Bahrain, we do offer our services in neighboring areas in Saudi Arabia, including Dammam, Khobar, Dhahran, and Jubail. For other international locations, please contact us directly to discuss options and additional travel fees."
-    },
-    {
-      id: 4,
-      question: "How much space do you need for the setup?",
-      answer: "Our minimal setup requires approximately 3x3 meters of space, though more space is preferable for optimal results. We can adapt to various environments, but a quiet room with minimal echo is best for audio quality."
-    },
-    {
-      id: 5,
-      question: "How long does it take to set up the equipment?",
-      answer: "Our team typically arrives 60-90 minutes before your scheduled recording time to set up and test all equipment. The exact setup time depends on the complexity of your chosen package and location specifications."
-    },
-    {
-      id: 6,
-      question: "Can you help with podcast editing and publishing?",
-      answer: "Yes, we offer post-production services including audio editing, video editing, color grading, intro/outro addition, and podcast distribution assistance. These services can be added to any recording package for an additional fee."
-    },
-    {
-      id: 7,
-      question: "What types of payment do you accept?",
-      answer: "We accept bank transfers, credit/debit cards, and cash payments. For most bookings, we require a 50% deposit to secure your date, with the balance due on the day of recording."
-    },
-    {
-      id: 8,
-      question: "What if I need to cancel or reschedule my booking?",
-      answer: "We understand plans change. Cancellations made more than 48 hours before your session are eligible for a full refund or rescheduling without fees. Cancellations within 48 hours may incur a 25% fee or can be rescheduled for a small administration charge."
-    },
-    {
-      id: 9,
-      question: "Can you accommodate multiple guests or panel discussions?",
-      answer: "Absolutely! Our premium and professional packages include multiple microphones and camera setups specifically designed for interviews and panel discussions. Let us know how many participants you'll have when booking so we can prepare accordingly."
-    },
-    {
-      id: 10,
-      question: "I've never recorded a podcast before. Can you provide guidance?",
-      answer: "Yes, our team is experienced in working with first-time podcasters. We provide technical guidance during setup and recording, and can offer basic content and presentation tips if desired. We aim to make the experience comfortable and professional for podcasters of all experience levels."
-    }
-  ];
 
   const [activeIndex, setActiveIndex] = useState(-1);
 
@@ -64,13 +70,12 @@ export default function FAQ() {
 
   return (
     <>
-      <Head>
-        <title>Frequently Asked Questions - Podcast Bahrain by Premiera Live</title>
-        <meta name="description" content="Find answers to common questions about our mobile podcast recording services in Bahrain." />
-      
-        <meta property="og:title" content="Frequently Asked Questions - Podcast Bahrain by Premiera Live" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Premiera Live" /></Head>
+      <Seo
+        title="Frequently Asked Questions - Podcast Bahrain by Premiera Live"
+        description="Find answers to common questions about our mobile podcast recording services in Bahrain."
+        path="/faq"
+        jsonLd={faqJsonLd(faqs)}
+      />
 
       {/* Header Banner */}
       <div className="bg-black text-white py-20">
@@ -86,7 +91,7 @@ export default function FAQ() {
           <div className="max-w-3xl mx-auto">
             <AnimatedSection>
               <p className="text-lg text-center mb-12">
-                If you can't find the answer to your question here, please feel free to <a href="/contact" className="text-gold hover:underline">contact us</a> directly.
+                If you can't find the answer to your question here, please feel free to <Link href="/booking" className="text-gold hover:underline">book a session</Link> or contact us directly.
               </p>
             </AnimatedSection>
             

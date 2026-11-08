@@ -1,7 +1,8 @@
-import Head from 'next/head';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Seo from '../../components/Seo';
+import { serviceJsonLd } from '../../lib/structured-data';
 
 const AnimatedSection = ({ children, className = '', delay = 0 }) => {
   const [ref, inView] = useInView({
@@ -86,14 +87,12 @@ export default function Services() {
 
   return (
     <>
-      <Head>
-        <title>Services | Podcast Bahrain by Premiera Live</title>
-        <meta name="description" content="Professional podcast production services in Bahrain. Multi-camera setups, mobile studio, editing, and distribution. Get a tailored quote for your project." />
-        <link rel="canonical" href="https://podcastbahrain.com/services" />
-      
-        <meta property="og:title" content="Services | Podcast Bahrain by Premiera Live" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Premiera Live" /></Head>
+      <Seo
+        title="Services | Podcast Bahrain by Premiera Live"
+        description="Professional podcast production services in Bahrain. Multi-camera setups, mobile studio, editing, and distribution. Get a tailored quote for your project."
+        path="/services"
+        jsonLd={serviceJsonLd()}
+      />
 
       {/* Hero */}
       <section className="relative py-32 bg-gradient-to-b from-gray-900 to-black">

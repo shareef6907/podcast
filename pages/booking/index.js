@@ -1,6 +1,7 @@
-import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import AnimatedSection from '../../components/AnimatedSection';
+import Seo from '../../components/Seo';
+import { bookingJsonLd } from '../../lib/structured-data';
 
 export default function Booking() {
   const [formState, setFormState] = useState({
@@ -91,13 +92,12 @@ Message: ${formState.message || 'No additional message'}`;
 
   return (
     <>
-      <Head>
-        <title>Book Your Session | Podcast Bahrain by Premiera Live</title>
-        <meta name="description" content="Book your professional podcast recording session. Fill out the form or contact us directly via WhatsApp for instant booking." />
-      
-        <meta property="og:title" content="Book Your Session | Podcast Bahrain by Premiera Live" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Premiera Live" /></Head>
+      <Seo
+        title="Book Your Session | Podcast Bahrain by Premiera Live"
+        description="Book your professional podcast recording session. Fill out the form or contact us directly via WhatsApp for instant booking."
+        path="/booking"
+        jsonLd={bookingJsonLd()}
+      />
 
       {/* Hero Banner */}
       <section className="pt-32 pb-16 bg-gradient-to-b from-gray-900 to-black">

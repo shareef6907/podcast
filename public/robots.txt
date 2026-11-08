@@ -1,0 +1,10 @@
+# robots.txt for podcastbahrain.com
+# Previously this file did not exist (404), so there were no crawl directives
+# and no sitemap pointer for crawlers to follow.
+
+User-agent: *
+Allow: /
+Disallow: /_next/
+Disallow: /api/
+
+Sitemap: https://www.podcastbahrain.com/sitemap.xml

@@ -1,6 +1,7 @@
-import Head from 'next/head';
 import Link from 'next/link';
 import AnimatedSection from '../../components/AnimatedSection';
+import Seo from '../../components/Seo';
+import { portfolioJsonLd } from '../../lib/structured-data';
 
 export default function Portfolio() {
   const portfolioItems = [
@@ -26,13 +27,12 @@ export default function Portfolio() {
 
   return (
     <>
-      <Head>
-        <title>Portfolio | Podcast Bahrain by Premiera Live</title>
-        <meta name="description" content="See examples of our professional podcast productions. Cinema-quality video podcasts for businesses, creators, and thought leaders in Bahrain." />
-      
-        <meta property="og:title" content="Portfolio | Podcast Bahrain by Premiera Live" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Premiera Live" /></Head>
+      <Seo
+        title="Portfolio | Podcast Bahrain by Premiera Live"
+        description="See examples of our professional podcast productions. Cinema-quality video podcasts for businesses, creators, and thought leaders in Bahrain."
+        path="/portfolio"
+        jsonLd={portfolioJsonLd(portfolioItems)}
+      />
 
       {/* Hero Banner */}
       <section className="pt-32 pb-20 bg-gradient-to-b from-gray-900 to-black">
