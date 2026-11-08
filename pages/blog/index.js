@@ -1,75 +1,21 @@
-import Head from 'next/head';
 import Link from 'next/link';
 import AnimatedSection from '../../components/AnimatedSection';
+import Seo from '../../components/Seo';
+import { blogPosts } from '../../data/blog';
+import { blogIndexJsonLd } from '../../lib/structured-data';
 
 export default function Blog() {
   // In a real implementation, this would come from a CMS or API
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Why Bahrain is Perfect for Podcasting",
-      excerpt: "Discover why the diverse culture and strategic location of Bahrain makes it an ideal hub for podcast content creation in the Gulf region.",
-      image: "/images/blog/bahrain-podcasting.jpg",
-      date: "March 15, 2023",
-      author: "Shareef Ali",
-      slug: "why-bahrain-is-perfect-for-podcasting"
-    },
-    {
-      id: 2,
-      title: "Tips for Hotel Room Recordings",
-      excerpt: "Learn how to transform your hotel room into a professional recording studio with these simple yet effective techniques.",
-      image: "/images/blog/hotel-recording.jpg",
-      date: "April 22, 2023",
-      author: "Ahmed Khan",
-      slug: "tips-for-hotel-room-recordings"
-    },
-    {
-      id: 3,
-      title: "Choosing the Right Microphone for Your Podcast",
-      excerpt: "A comprehensive guide to selecting the perfect microphone based on your podcast format, voice, and recording environment.",
-      image: "/images/blog/microphone-selection.jpg",
-      date: "May 10, 2023",
-      author: "Sarah Johnson",
-      slug: "choosing-the-right-microphone"
-    },
-    {
-      id: 4,
-      title: "Multi-Camera Setups for Dynamic Podcast Videos",
-      excerpt: "Elevate your podcast's visual appeal with professional multi-camera techniques that engage viewers and add production value.",
-      image: "/images/blog/multi-camera.jpg",
-      date: "June 5, 2023",
-      author: "Shareef Ali",
-      slug: "multi-camera-setups"
-    },
-    {
-      id: 5,
-      title: "Podcast Marketing Strategies for Bahrain and GCC Audiences",
-      excerpt: "Targeted marketing approaches to help your podcast reach and resonate with listeners across Bahrain and the wider Gulf region.",
-      image: "/images/blog/podcast-marketing.jpg",
-      date: "July 18, 2023",
-      author: "Fatima Al-Sayed",
-      slug: "podcast-marketing-gcc"
-    },
-    {
-      id: 6,
-      title: "The Rise of Business Podcasts in the Middle East",
-      excerpt: "How corporate and business-focused podcasts are transforming communications and thought leadership in the Middle Eastern market.",
-      image: "/images/blog/business-podcasts.jpg",
-      date: "August 30, 2023",
-      author: "Mohammed Al-Dossary",
-      slug: "business-podcasts-middle-east"
-    }
-  ];
+
 
   return (
     <>
-      <Head>
-        <title>Blog - Podcast Bahrain by Premiera Live</title>
-        <meta name="description" content="Professional Podcast filming in Bahrain! Expert filmmaker creates high-quality video podcasts for Creators & Businesses. Book now for studio or on-location shoots!" />
-      
-        <meta property="og:title" content="Blog - Podcast Bahrain by Premiera Live" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Premiera Live" /></Head>
+      <Seo
+        title="Blog - Podcast Bahrain by Premiera Live"
+        description="Podcast production insights from Premiera Live: recording in Bahrain, equipment and microphone choices, multi-camera setups, and how to grow a podcast across the GCC."
+        path="/blog"
+        jsonLd={blogIndexJsonLd(blogPosts)}
+      />
 
       {/* Header Banner */}
       <div className="bg-black text-white py-20">
@@ -84,7 +30,7 @@ export default function Blog() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
-              <AnimatedSection key={post.id} delay={index * 0.1}>
+              <AnimatedSection key={post.slug} delay={index * 0.1}>
                 <div className="bg-gray-900 rounded-lg shadow-lg overflow-hidden h-full flex flex-col border border-gray-800">
                   <div className="h-48 bg-gray-800 relative">
                     <img 
@@ -93,7 +39,8 @@ export default function Blog() {
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         console.error(`Failed to load image: ${post.image}`);
-                        e.target.src = `https://via.placeholder.com/600x400?text=${post.title.replace(/\s+/g, '+')}`;
+                        e.target.onerror = null;
+                        e.target.src = '/images/grid.svg';
                       }} 
                     />
                   </div>
