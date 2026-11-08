@@ -18,14 +18,14 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About Us - Bahrain Nights Podcast Studio</title>
+        <title>About Us - Podcast Bahrain by Premiera Live</title>
         <meta name="description" content="Professional Podcast filming in Bahrain! Expert filmmaker creates high-quality video podcasts for Creators & Businesses. Book now for studio or on-location shoots!" />
       </Head>
 
       {/* Header Banner */}
       <div className="bg-black text-white py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">About Bahrain Nights</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">About Premiera Live</h1>
           <p className="text-xl max-w-3xl mx-auto">We deliver unparalleled podcasting experiences with state-of-the-art equipment and expertise.</p>
         </div>
       </div>
@@ -40,7 +40,7 @@ export default function About() {
                 "To deliver unparalleled podcasting experiences with state-of-the-art equipment and expertise, anywhere in Bahrain."
               </p>
               <p className="text-lg">
-                At Bahrain Nights, we believe that everyone deserves access to professional podcasting resources. Our mobile studio setup eliminates barriers to entry, bringing cinema-quality recording capabilities directly to you, no matter where you are in Bahrain.
+                At Premiera Live, we believe that everyone deserves access to professional podcasting resources. Our mobile studio setup eliminates barriers to entry, bringing cinema-quality recording capabilities directly to you, no matter where you are in Bahrain.
               </p>
             </AnimatedSection>
           </div>
@@ -51,7 +51,7 @@ export default function About() {
       <section className="py-16 bg-black text-white">
         <div className="container mx-auto px-4">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold text-center mb-12">Why Choose Bahrain Nights</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Why Choose Premiera Live</h2>
           </AnimatedSection>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

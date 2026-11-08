@@ -34,7 +34,7 @@ export default function BlogPost() {
         <h3 class="text-xl font-bold mb-3 text-gold">Supportive Business Environment</h3>
         <p class="mb-4">Bahrain's business-friendly regulations and support for digital entrepreneurship make it easier to establish and grow podcast-related businesses. The kingdom's economic development board actively encourages creative industries, offering various incentives for content creators.</p>
         
-        <p class="mb-4">With Bahrain Nights' mobile podcast studio solutions, creators can take full advantage of these favorable conditions without the need to invest in expensive equipment or dedicated space. Our professional setup can transform any location in Bahrain – from hotel rooms to beachside venues – into a world-class recording environment.</p>
+        <p class="mb-4">With Premiera Live's mobile podcast studio solutions, creators can take full advantage of these favorable conditions without the need to invest in expensive equipment or dedicated space. Our professional setup can transform any location in Bahrain – from hotel rooms to beachside venues – into a world-class recording environment.</p>
       `
     },
     'tips-for-hotel-room-recordings': {
@@ -62,7 +62,7 @@ export default function BlogPost() {
         <p class="mb-4">Be aware of peak activity times in hotels. Early mornings and late evenings are typically quieter, while mid-day might bring cleaning staff and more guest movement.</p>
         
         <h3 class="text-xl font-bold mb-3 text-gold">Professional Equipment</h3>
-        <p class="mb-4">Using professional equipment makes a significant difference in challenging environments. This is where Bahrain Nights' mobile podcast studio service shines - we bring cinema-quality cameras, professional microphones, and proper acoustic treatment directly to your hotel room.</p>
+        <p class="mb-4">Using professional equipment makes a significant difference in challenging environments. This is where Premiera Live's mobile podcast studio service shines - we bring cinema-quality cameras, professional microphones, and proper acoustic treatment directly to your hotel room.</p>
         
         <p class="mb-4">With our expertise and equipment, you can transform any hotel room in Bahrain into a professional podcast studio without compromising on quality or convenience.</p>
       `
@@ -92,7 +92,7 @@ export default function BlogPost() {
         <h3 class="text-xl font-bold mb-3 text-gold">Budget Considerations</h3>
         <p class="mb-4">Quality microphones range from $100 to $3,000+. For beginners, the Rode PodMic ($99) or Audio-Technica ATR2100x ($99) offer excellent value. As you grow, consider investing in higher-end options like the Shure SM7B ($399) or Electro-Voice RE20 ($449).</p>
         
-        <p class="mb-4">At Bahrain Nights, our mobile podcast studio comes equipped with a selection of professional-grade microphones suitable for different voice types and recording scenarios. Our expert technicians can help select the perfect microphone for each speaker, ensuring optimal sound quality without the heavy investment in equipment.</p>
+        <p class="mb-4">At Premiera Live, our mobile podcast studio comes equipped with a selection of professional-grade microphones suitable for different voice types and recording scenarios. Our expert technicians can help select the perfect microphone for each speaker, ensuring optimal sound quality without the heavy investment in equipment.</p>
       `
     },
     'multi-camera-setups': {
@@ -122,7 +122,7 @@ export default function BlogPost() {
         <h3 class="text-xl font-bold mb-3 text-gold">Post-Production Workflow</h3>
         <p class="mb-4">In editing, the wide shot serves as your master shot while cutting to individual cameras for reactions and emphasizing speakers. Dynamic switching between angles maintains viewer engagement. Software like Adobe Premiere Pro, Final Cut Pro, or DaVinci Resolve makes multi-camera editing straightforward.</p>
         
-        <p class="mb-4">At Bahrain Nights, we specialize in professional multi-camera setups with our cinema-quality equipment. Our packages include Sony FX6, FX3, and A7S III cameras with the Blackmagic ATEM Mini ISO Extreme for sophisticated switching and recording. We handle all technical aspects, allowing you to focus entirely on your content.</p>
+        <p class="mb-4">At Premiera Live, we specialize in professional multi-camera setups with our cinema-quality equipment. Our packages include Sony FX6, FX3, and A7S III cameras with the Blackmagic ATEM Mini ISO Extreme for sophisticated switching and recording. We handle all technical aspects, allowing you to focus entirely on your content.</p>
       `
     },
     'podcast-marketing-gcc': {
@@ -152,7 +152,7 @@ export default function BlogPost() {
         <h3 class="text-xl font-bold mb-3 text-gold">Video Content</h3>
         <p class="mb-4">GCC audiences show a strong preference for video content. Publishing video versions of your podcast on YouTube and Instagram can significantly increase your reach. High-quality video production adds professionalism that's especially valued in Gulf markets.</p>
         
-        <p class="mb-4">At Bahrain Nights, our professional video podcast services help you create visually appealing content that resonates with Gulf audiences. Our understanding of local cultural nuances and consumption habits helps position your podcast for success in this unique market.</p>
+        <p class="mb-4">At Premiera Live, our professional video podcast services help you create visually appealing content that resonates with Gulf audiences. Our understanding of local cultural nuances and consumption habits helps position your podcast for success in this unique market.</p>
       `
     },
     'business-podcasts-middle-east': {
@@ -182,7 +182,7 @@ export default function BlogPost() {
         <h3 class="text-xl font-bold mb-3 text-gold">Video Integration</h3>
         <p class="mb-4">The most successful business podcasts in the region incorporate professional video elements, recognizing the region's preference for visual media. These video podcasts are shared across multiple platforms, from traditional podcast apps to YouTube, LinkedIn, and Instagram.</p>
         
-        <p class="mb-4">Bahrain Nights specializes in producing executive-quality business podcasts that meet the high presentation standards expected in Gulf business circles. Our professional studio equipment, experienced production team, and understanding of business communication needs make us the ideal partner for corporations entering the podcasting space.</p>
+        <p class="mb-4">Premiera Live specializes in producing executive-quality business podcasts that meet the high presentation standards expected in Gulf business circles. Our professional studio equipment, experienced production team, and understanding of business communication needs make us the ideal partner for corporations entering the podcasting space.</p>
       `
     }
   };
@@ -207,7 +207,7 @@ export default function BlogPost() {
   return (
     <>
       <Head>
-        <title>{post.title} - Bahrain Nights Podcast Studio</title>
+        <title>{post.title} - Podcast Bahrain by Premiera Live</title>
         <meta name="description" content="Professional Podcast filming in Bahrain! Expert filmmaker creates high-quality video podcasts for Creators & Businesses. Book now for studio or on-location shoots!" />
       </Head>
 
@@ -289,7 +289,7 @@ export default function BlogPost() {
         <div className="container mx-auto px-4 text-center">
           <AnimatedSection>
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to start your own podcast?</h2>
-            <p className="text-lg mb-6 max-w-3xl mx-auto">Get professional equipment, expert technicians, and world-class production for your podcast with Bahrain Nights.</p>
+            <p className="text-lg mb-6 max-w-3xl mx-auto">Get professional equipment, expert technicians, and world-class production for your podcast with Premiera Live.</p>
             <Link href="/booking">
               <span className="bg-black text-gold font-bold py-3 px-8 rounded-full inline-block hover:bg-gray-800 transition duration-300">Book Your Session</span>
             </Link>
