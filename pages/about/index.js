@@ -20,7 +20,10 @@ export default function About() {
       <Head>
         <title>About Us - Podcast Bahrain by Premiera Live</title>
         <meta name="description" content="Professional Podcast filming in Bahrain! Expert filmmaker creates high-quality video podcasts for Creators & Businesses. Book now for studio or on-location shoots!" />
-      </Head>
+      
+        <meta property="og:title" content="About Us - Podcast Bahrain by Premiera Live" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Premiera Live" /></Head>
 
       {/* Header Banner */}
       <div className="bg-black text-white py-20">

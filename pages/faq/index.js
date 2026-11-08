@@ -67,7 +67,10 @@ export default function FAQ() {
       <Head>
         <title>Frequently Asked Questions - Podcast Bahrain by Premiera Live</title>
         <meta name="description" content="Find answers to common questions about our mobile podcast recording services in Bahrain." />
-      </Head>
+      
+        <meta property="og:title" content="Frequently Asked Questions - Podcast Bahrain by Premiera Live" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Premiera Live" /></Head>
 
       {/* Header Banner */}
       <div className="bg-black text-white py-20">
